@@ -10,10 +10,8 @@ Otherwise it is a rails app I made using RubyMine.
 
 ## Important:
 My directory structure looked like this:
-```json
-/log_parse
+/log_parser
 /var
-```
 So the project must parallel to the /var/logs folder.
 
 ### How To Run
@@ -22,16 +20,18 @@ bundle e rails s
 ```
 ### API Spec
 API call is made to `/logs` and looks for the following keywords:
-```json
-"filename": Required and is the name of the filename
-"limit": How many lines back you want, a limit of 0 will be treated as nil
-"keywords": Should be in an Array Format, will go into a regex that does case sensitive matching.
-```
+
+__filename__: Required and is the name of the filename
+
+__limit__: How many lines back you want, a limit of 0 will be treated as nil
+
+__keywords__: Should be in an Array Format, will go into a regex that does case sensitive matching.
+
 
 ### Example API Format
-```json
-Url: http://127.0.0.1:3000/logs
+Url: `http://127.0.0.1:3000/logs`
 Params:
+```
 {
     "filename": "blah.txt",
     "limit": 5,
